@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block navigator %}
+    <div class="detail-category">
+        <div class="detail-title">
+            <h1><strong>{{ post_detail.title }}</strong></h1>
+            <time>{{ post_detail.date_added|date:"d M, y h:i" }}</time>
+            <a href="{% url 'category_url' post_detail.category.slug %}">{{ post_detail.category.title }}</a>
+            <p><strong>{{ post_detail.title }}</strong></p>
+            <p>{{ post_detail.body }}</p>
+            <h2>Comments</h2>
+
+            {% if not post_detail.comment_model.all %}
+            <p>No comments yet!</p>
+            {% endif %}
+
+            {% for comment in post_detail.comment_model.all %}
+            <article>
+                <strong>{{comment.commenter_name}} - {{comment.date_added}}</strong><br/>
+                {{comment.comment_body}}
+            </article>
+            {% endfor %}
+
+            {% if user.is_authenticated %}
+            <form method="post" action="{% url 'detail_url' post_detail.slug post_detail.id %}">
+                {% csrf_token %}
+                {{ form_detail.as_table }}
+                <input type="submit" value="Add comment">
+            </form>
+            </article>
+            {% endif %}
+        
+        </div>
+    </div>
+{% endblock %}

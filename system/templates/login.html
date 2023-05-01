@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}Login{% endblock %}
+
+{% block name %}Please Login Here{% endblock %}
+
+{% block container %}
+    <div class="register-login">
+        <div class="register">
+            <h1>Sign Up</h1>
+            {% for message in messages %}
+                {% if 'register' in message.extra_tags %}
+                    <p clas="alert alert-warning">{{message}}</p>
+                {% endif %}
+            {% endfor %}
+            <!-- <p clas="alert alert-warning">Sign Up</p> -->
+            <form action="{% url 'register_url' %}" method="POST">
+                {% csrf_token %}
+                <div class="register-column">
+                    <label for="form-label" class="form-label">First Name</label>
+                    <input type="text" class="form-control" name="fname">
+                </div>
+                <div class="register-column">
+                    <label for="form-label" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" name="lname">
+                </div>
+                <div class="register-column">
+                    <label for="form-label" class="form-label">Username</label>
+                    <input type="text" class="form-control" name="username">
+                </div>
+                <div class="register-column">
+                    <label for="form-label" class="form-label">Email</label>
+                    <input type="text" class="form-control" name="email">
+                </div>
+                <div class="register-column">
+                    <label for="form-label" class="form-label">Password</label>
+                    <input type="text" class="form-control" name="pass1">
+                </div>
+                <div class="register-column">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="text" class="form-control" name="pass2">
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">REGISTER</button>
+                </div>
+            </form>
+        </div>
+        <div class="login">
+            <h1>Login</h1>
+            {% for message in messages %}
+                {% if 'login' in message.extra_tags %}
+                    <p clas="alert alert-warning">{{message}}</p>
+                {% endif %}
+            {% endfor %}
+            <form action="{% url 'login_url' %}" method="POST">
+                <div class="login-banner">
+                    {% csrf_token %}
+                    <div class="login-column">
+                        <label for="form-label" class="form-label">Username</label>
+                        <input type="text" class="form-control" name="username">
+                    </div>
+                    <div class="login-column">
+                        <label for="exampleInputPassword1" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="password">
+                    </div>
+                </div>
+    
+                <div class="login-column">
+                    <button type="submit" class="btn btn-primary">LOGIN</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+{% endblock %}

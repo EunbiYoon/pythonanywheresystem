@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block sidebar %}
+    <div class="history">
+        <h3>Comment History</h3>
+        {% for post in posts_set %}
+            <article>
+                <h3>{{ post.category }}</h3>
+                <h4>{{ post.title }}</a></h4>
+                <time>{{ post.date_added|date:"d M, y h:i" }}</time>
+                <p> {{ post.intro }} </p>
+                <a href="{% url 'detail_url' post.slug post.id%}">Detail Review</a>
+            </article>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+
+{% block container %}
+    <div class="box-container">
+        <a class="box-item1" href="{% url 'register_url' %}">
+            <h2>BOM Comparison</h2>
+        </a>
+        <a class="box-item2" href="{% url 'register_url' %}">
+            <h2>Cost Review</h2>
+        </a>
+        <a class="box-item3" href="{% url 'register_url' %}">
+            <h2>Coming Soon!</h2>
+        </a>
+        <a class="box-item4"href="{% url 'register_url' %}">
+            <h2>Coming Soon!</h2>
+        </a>
+    </div>
+{% endblock%}
+
+

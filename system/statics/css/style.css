@@ -1,0 +1,340 @@
+/*templates grid*/
+body{
+  margin:auto;
+  font-family: 'Orbitron';
+}
+.top{
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  gap:10px;
+  height: 8vh;
+  margin: 30px 20px 20px;
+}
+.main{
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  height: 77vh;
+  gap:10px;
+  margin:auto 20px;
+}
+.sidebar{
+  grid-column: 1;
+  background-color:antiquewhite;
+}
+.container{
+  grid-column: 2;
+  background-color:#D0DAEE;
+}
+.navigator{
+  grid-column: 3;
+  background-color:pink;
+}
+
+/*top container*/
+.top .cotainer .user-name .typing-demo {
+  width: 100%;
+  animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-size: 2em;
+}
+.top .cotainer .user-name .typing-demo span{
+  color:green
+}
+@keyframes typing {
+  from {
+      width: 0
+  }
+}  
+@keyframes blink {
+  50% {
+      border-color: transparent
+  }
+}
+@keyframes blink{
+  50% {
+      border-color: transparent
+  }
+}
+
+/*top navigator*/
+.top .navigator p{
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: center;
+}
+.top .navigator .user-banner button{
+  background-color: antiquewhite;
+  margin: 0 10px;
+  width:100px;
+  font-size:1rem;
+  margin-top:10px;
+}
+.top .navigator .user-banner button:hover{
+  background-color: aqua;
+  color:white;
+  cursor:pointer;
+}
+.top .navigator .user-banner button a{
+  text-decoration: none;
+}
+
+/* main container */
+.main .menu{
+  background-color: beige;
+  margin:10px 10px 50px 10px;
+  font-size:1.5rem;
+
+}
+
+.main .detail{
+  background-color: black;
+  color:white;
+  margin:5px;
+  text-align:center;
+}
+
+/*footer*/
+footer{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height: 70px;
+  background-color: #D0DAEE;
+}
+footer h5{
+  font-size: 1rem;
+  text-align: center;
+  color:blue;
+}
+
+
+/*home.html*/
+.history{
+  background-color: #D0DAEE;
+  text-align: center;
+  padding:30px;
+}
+.history .title{
+  font-size: 1.1rem;
+} 
+.history time{
+  font-size:0.8rem;
+}
+.history article{
+  padding:20px 0 30px 0;
+}
+
+.box-container{
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 300px);
+  grid-template-rows: repeat(2,300px);
+  margin: 70px auto;
+  justify-content: center;
+  vertical-align: center;
+  font-family: 'Orbitron';
+  text-align: center;
+}
+.box-container a{
+  text-decoration: none;
+}
+.box-container a:hover{
+  background-color:rgb(255, 211, 226);
+  color:black;
+  font-weight: 800;
+}
+.box-container .box-item1{
+  grid-column: 1;
+  grid-row: 1;
+  background-color:darkgreen;
+  height: 300px;
+  color:white
+}
+.box-container .box-item2{
+  grid-column: 2;
+  grid-row: 1;
+  background-color: antiquewhite;
+  height: 300px;
+}
+.box-container .box-item3{
+  grid-column: 1;
+  grid-row: 2;
+  background-color: aquamarine;
+  height: 300px;
+}
+.box-container .box-item4{
+  grid-column: 2;
+  grid-row: 2;
+  background-color:rgb(97, 0, 253);
+  height: 300px;
+  color:white;
+}
+
+
+/*login.html*/
+.register-login{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10px;
+  text-align: center;
+}
+.register{
+  grid-column:1;
+}
+.login{
+  grid-column:2;
+}
+.register-login h1{
+  background: linear-gradient(#10abff, #1beabd 5%, #10abff 40%);
+  background-clip: text;
+  background-color: #da1b60;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  animation: TransitioningBackground 2s linear infinite;
+  background-size: 100% 300%;
+}
+@keyframes TransitioningBackground {
+  0% {
+      background-position: 100% 200%;
+  }
+  100% {
+      background-position: 100% -100%;
+  }
+}
+.register form{
+  background-color: antiquewhite;
+  border:5px solid slateblue
+}
+.register .register-column{
+  margin:20px;
+}
+.register label{
+  color:rgb(97, 0, 253);
+  font-size: 1rem;
+  font-weight: 600;
+}
+.register input{
+  font-size: 1rem;
+  width:350px;
+  align-items: center;
+}
+.register form{
+  color:rgba(0, 0, 0, 0.557);
+  margin:30px 120px;
+}
+.register .button-box{
+  text-align: center;
+}
+.register button{
+  background-color: aquamarine;
+  color:black;
+  align-items: right;
+  font-size: 1.2rem;
+  font-family: 'Orbitron';
+  margin:20px 0;
+  padding:5px 10px;
+}
+.register button:hover{
+  color:#146578;
+  cursor: pointer;
+  font-weight:600;
+  background-color:antiquewhite;
+}
+.login button{
+  background-color: aquamarine;
+  color:black;
+  align-items: right;
+  font-size: 1.2rem;
+  grid-column: 2;
+  grid-row: 1;
+  margin:auto;
+  width: 100%;
+  height: 100%;
+  border-top: transparent;
+  border-bottom: transparent;
+  border-right: transparent;
+  border-left: #17D4FE 5px solid;
+  font-family: 'Orbitron';
+}
+.login button:hover{
+  color:rgb(171, 171, 171);
+  cursor: pointer;
+  font-weight:600;
+}
+.login form{
+  margin:50px;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 10px;
+  background-color:azure;
+  border: #17D4FE 5px solid;
+  font-weight: 600;
+}
+.login .login-banner{
+  display: grid;
+  grid-column: 1;
+  grid-row: 1;
+  align-items: right;
+}
+.login input{
+  font-size: 1.2rem;
+  text-align: center;
+  margin:20px;
+}
+.login button{
+  background-color: aquamarine;
+  color:black;
+  align-items: right;
+  font-size: 1.2rem;
+  grid-column: 2;
+  grid-row: 1;
+  margin:auto;
+  width: 100%;
+  height: 100%;
+  border-top: transparent;
+  border-bottom: transparent;
+  border-right: transparent;
+  border-left: #17D4FE 5px solid;
+  font-family: 'Orbitron';
+}
+.login button:hover{
+  color:rgb(171, 171, 171);
+  cursor: pointer;
+  font-weight:600;
+}
+  
+  
+/* comments */
+.detail-category{
+  text-align: center;
+}
+.detail-category .detail-title{
+  margin-bottom: 30px;
+}
+.detail-comment{
+  background-color: #D0DAEE;
+}
+.detail-comment h2{
+  margin:0 auto;
+  padding:15px 0 5px;
+}
+.detail-comment p{
+  padding:30px 0;
+}
+.detail-comment textarea{
+  width:90%;
+  height: 7vh;
+}
+.detail-category input{
+  background-color: #10abff;
+}
+.detail-category label{
+  display: none;
+}
+
+
